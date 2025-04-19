@@ -3,14 +3,14 @@
 The official repo for "GUI-R1: A Generalist R1-style Vision-Language Action Model For GUI Agents".
 
 <p align="center">
-       🤗 <a href="https://huggingface.co/datasets/ritzzai/GUI-R1">GUI-R1-3K</a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/ritzzai/GUI-R1">GUI-R1</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/abs/2503.06749">Paper</a>&nbsp&nbsp
+       🤗 <a href="https://huggingface.co/datasets/ritzzai/GUI-R1">GUI-R1-3K</a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/ritzzai/GUI-R1">GUI-R1</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/abs/2504.10458">Paper</a>&nbsp&nbsp
 </p>
 
 ## News
 
 - [2025/04/18] We released the weights, code and scripts.
 - [2025/04/17] We released [Dataset](https://huggingface.co/datasets/ritzzai/GUI-R1)!
-- [2025/03/09] Our GUI-R1 paper ([GUI-R1: A Generalist R1-style Vision-Language Action Model For GUI Agents](https://arxiv.org/abs/2504.10458!)) can be accessed in arXiv!
+- [2025/03/09] Our GUI-R1 paper ([GUI-R1: A Generalist R1-style Vision-Language Action Model For GUI Agents](https://arxiv.org/abs/2504.10458)) can be accessed in arXiv!
 
 ## Our Exploration
 
