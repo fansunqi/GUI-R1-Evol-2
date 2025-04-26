@@ -89,3 +89,13 @@ bash eval.sh
 
 We would like to express our sincere gratitude to [DeepSeek](https://github.com/deepseek-ai/DeepSeek-R1), [VLM-R1](https://github.com/om-ai-lab/VLM-R1.git), [QwenVL](https://github.com/QwenLM/Qwen2.5-VL), [EasyR1](https://github.com/hiyouga/EasyR1.git), and [OS-ATLAS](https://github.com/OS-Copilot/OS-Atlas.git) for providing open-source resources that contributed to the development of this project.
 
+## Citation
+If you find this repo useful for your research, please consider citing the paper
+```
+@article{xia2025gui,
+  title={GUI-R1: A Generalist R1-Style Vision-Language Action Model For GUI Agents},
+  author={Xia, Xiaobo and Luo, Run},
+  journal={arXiv preprint arXiv:2504.10458},
+  year={2025}
+}
+```
