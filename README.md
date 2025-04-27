@@ -94,7 +94,7 @@ If you find this repo useful for your research, please consider citing the paper
 ```
 @article{xia2025gui,
   title={GUI-R1: A Generalist R1-Style Vision-Language Action Model For GUI Agents},
-  author={Xia, Xiaobo and Luo, Run},
+  author={Luo, Run and Wang, Lu and He, Wanwei and Xia, Xiaobo},
   journal={arXiv preprint arXiv:2504.10458},
   year={2025}
 }
