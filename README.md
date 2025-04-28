@@ -92,7 +92,7 @@ We would like to express our sincere gratitude to [DeepSeek](https://github.com/
 ## Citation
 If you find this repo useful for your research, please consider citing the paper
 ```
-@article{xia2025gui,
+@article{luo2025gui,
   title={GUI-R1: A Generalist R1-Style Vision-Language Action Model For GUI Agents},
   author={Luo, Run and Wang, Lu and He, Wanwei and Xia, Xiaobo},
   journal={arXiv preprint arXiv:2504.10458},
