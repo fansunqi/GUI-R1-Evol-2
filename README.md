@@ -7,7 +7,7 @@ The official repo for "GUI-R1: A Generalist R1-style Vision-Language Action Mode
 </p>
 
 ## News
-- [2025/05/04] We released an 800K high-quality reinforcement learning dataset filtered from the OS-Atlas pretraining data using QwenVL2.5-7B, with varying levels of difficulty. From this, we further filtered out a diverse subset of 10K samples and applied the DAPO algorithm, giving you the potential to outperform InfiGUI-R1. We warmly welcome everyone to utilize it!.
+- [2025/05/04] We released an 800K high-quality reinforcement learning [dataset](https://huggingface.co/datasets/ritzzai/GUI-R1) filtered from the OS-Atlas pretraining data using QwenVL2.5-7B, with varying levels of difficulty. From this, we further filtered out a diverse subset of 10K samples and applied the DAPO algorithm, giving you the potential to outperform InfiGUI-R1. We warmly welcome everyone to utilize it!.
 - [2025/04/18] We released the weights, code and scripts.
 - [2025/04/17] We released [Dataset](https://huggingface.co/datasets/ritzzai/GUI-R1)!
 - [2025/04/14] Our GUI-R1 paper ([GUI-R1: A Generalist R1-style Vision-Language Action Model For GUI Agents](https://arxiv.org/abs/2504.10458)) can be accessed in arXiv!
