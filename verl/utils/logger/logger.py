@@ -67,11 +67,12 @@ class MlflowLogger(Logger):
 
 class TensorBoardLogger(Logger):
     def __init__(self, config: Dict[str, Any]) -> None:
-        tensorboard_dir = os.getenv("TENSORBOARD_DIR", "tensorboard_log")
+        # tensorboard_dir = os.getenv("TENSORBOARD_DIR", "tensorboard_log")
+        tensorboard_dir = config["trainer"]["save_checkpoint_path"]
         os.makedirs(tensorboard_dir, exist_ok=True)
         print(f"Saving tensorboard log to {tensorboard_dir}.")
         self.writer = SummaryWriter(tensorboard_dir)
-        self.writer.add_hparams(flatten_dict(config))
+        # self.writer.add_hparams(flatten_dict(config), {})
 
     def log(self, data: Dict[str, Any], step: int) -> None:
         for key, value in data.items():

@@ -1,6 +1,6 @@
 set -x
 
-MODEL_PATH=Qwen/Qwen2.5-VL-3B-Instruct  # replace it with your local file path
+MODEL_PATH=/home/fsq/hf_home/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3  # replace it with your local file path
 
 SYSTEM_PROMPT=""""""
 

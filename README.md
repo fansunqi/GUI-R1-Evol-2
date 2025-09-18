@@ -70,8 +70,8 @@ The structure of the directory should be:
 ## RL Training
 
 ```bash
-bash examples/qwen2_5_vl_3b_gui_grpo/sh
-bash examples/qwen2_5_vl_7b_gui_grpo/sh
+bash examples/qwen2_5_vl_3b_gui_grpo.sh
+bash examples/qwen2_5_vl_7b_gui_grpo.sh
 ```
 
 ## Inference and Evaluation

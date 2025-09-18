@@ -31,7 +31,7 @@ worker:
     model:
       model_path: Qwen/Qwen2.5-7B-Instruct
       enable_gradient_checkpointing: true
-      trust_remote_code: false
+      trust_remote_code: true
       freeze_vision_tower: false
     optim:
       lr: 1.0e-6
@@ -72,7 +72,9 @@ worker:
 
 trainer:
   total_episodes: 15
-  logger: ["console", "wandb"]
+  # logger: ["console", "wandb"]
+  # logger: ["console"]
+  logger: ["console", "tensorboard"]
   project_name: easy_r1
   experiment_name: qwen2_5_7b_math_grpo
   n_gpus_per_node: 8
@@ -83,5 +85,5 @@ trainer:
   val_generations_to_log: 1
   save_freq: 5  # -1 to disable
   save_limit: 3  # -1 to disable
-  save_checkpoint_path: null
+  save_checkpoint_path: /home/fsq/gui_agent/GUI-R1/ckpt
   load_checkpoint_path: null

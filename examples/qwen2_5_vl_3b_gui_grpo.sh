@@ -6,8 +6,8 @@ SYSTEM_PROMPT=""""""
 
 python3 -m verl.trainer.main \
     config=examples/config.yaml \
-    data.train_files=datasets/GUI-R1/train.parquet \
-    data.val_files=datasets/GUI-R1/test.parquet \
+    data.train_files=/home/fsq/hf_home/hub/datasets--ritzzai--GUI-R1/snapshots/ca55ddaa180c5e8f8b27003221c391efa10a1f52/train.parquet \
+    data.val_files=/home/fsq/hf_home/hub/datasets--ritzzai--GUI-R1/snapshots/ca55ddaa180c5e8f8b27003221c391efa10a1f52/test.parquet \
     data.system_prompt="${SYSTEM_PROMPT}" \
     worker.actor.model.model_path=${MODEL_PATH} \
     worker.rollout.tensor_parallel_size=1 \

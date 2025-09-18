@@ -205,10 +205,20 @@ class FSDPWorker(Worker):
             with no_init_weights(), init_empty_weights():
                 model = auto_class.from_config(
                     self.model_config,
-                    torch_dtype=torch_dtype,
-                    attn_implementation="flash_attention_2",
-                    trust_remote_code=model_config.trust_remote_code,
+                    # torch_dtype=torch_dtype,
+                    # attn_implementation="flash_attention_2",
+                    # trust_remote_code=model_config.trust_remote_code,
                 )
+                
+            model = model.to(dtype=torch_dtype)
+                
+            # 手动设置 attn_implementation
+            if hasattr(model, "set_attn_implementation"):
+                model.set_attn_implementation("flash_attention_2")
+            elif hasattr(model, "attn_implementation"):
+                model.attn_implementation = "flash_attention_2"
+
+            model.trust_remote_code=model_config.trust_remote_code
 
         assert isinstance(model, PreTrainedModel)  # lint
         model.tie_weights()  # avoid hanging
