@@ -30,6 +30,13 @@ from ..models.transformers.qwen2_vl import get_rope_index
 from . import torch_functional as VF
 import json
 
+
+import yaml
+import pdb
+from omegaconf import OmegaConf
+from verl.utils.tokenizer import get_processor, get_tokenizer
+
+
 def collate_fn(features: List[Dict[str, Any]]) -> Dict[str, Any]:
     tensors = defaultdict(list)
     non_tensors = defaultdict(list)
@@ -202,3 +209,65 @@ class RLHFDataset(Dataset):
         row_dict["raw_prompt_ids"] = self.tokenizer.encode(prompt, add_special_tokens=False)
         row_dict["ground_truth"] = json.dumps(gt)
         return row_dict
+    
+
+
+class Mind2WebDataset(Dataset):
+    pass
+
+    
+
+if __name__ == "__main__":
+    
+    config_path =  "/home/fsq/gui_agent/GUI-R1/examples/config.yaml"
+    # with open(config_path, "r") as f:
+    #     config = yaml.safe_load(f)
+    
+    # train_dataset = RLHFDataset(
+    #     data_path="/home/fsq/hf_home/hub/datasets--ritzzai--GUI-R1/snapshots/ca55ddaa180c5e8f8b27003221c391efa10a1f52/train.parquet",
+    #     tokenizer=tokenizer,
+    #     processor=processor,
+    #     prompt_key=config["data"]["prompt_key"],
+    #     answer_key=config["data"]["answer_key"],
+    #     image_key=config["data"]["image_key"],
+    #     max_prompt_length=config["data"]["max_prompt_length"],
+    #     truncation="right",
+    #     system_prompt=config["data"]["system_prompt"],
+    #     min_pixels=config["data"]["min_pixels"],
+    #     max_pixels=config["data"]["max_pixels"],
+    # )
+    
+    
+
+    
+    config = OmegaConf.load(config_path)
+    config.worker.actor.model.model_path = "Qwen/Qwen2.5-VL-3B-Instruct"
+    config.data.system_prompt = """"""
+    gui_r1_train_path = "/home/fsq/hf_home/hub/datasets--ritzzai--GUI-R1/snapshots/ca55ddaa180c5e8f8b27003221c391efa10a1f52/train.parquet"
+    
+    # instantiate tokenizer
+    tokenizer = get_tokenizer(
+        config.worker.actor.model.model_path,
+        trust_remote_code=config.worker.actor.model.trust_remote_code,
+        use_fast=True,
+    )
+    processor = get_processor(
+        config.worker.actor.model.model_path,
+        trust_remote_code=config.worker.actor.model.trust_remote_code,
+        use_fast=True,
+    )
+    
+    train_dataset = RLHFDataset(
+        data_path=gui_r1_train_path,
+        tokenizer=tokenizer,
+        processor=processor,
+        prompt_key=config.data.prompt_key,
+        answer_key=config.data.answer_key,
+        image_key=config.data.image_key,
+        max_prompt_length=config.data.max_prompt_length,
+        truncation="right",
+        system_prompt=config.data.system_prompt,
+        min_pixels=config.data.min_pixels,
+        max_pixels=config.data.max_pixels,
+    )
+
